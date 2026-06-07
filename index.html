@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiger Camp — Спортивний табір №1 під Києвом | Літні зміни 2025</title>
+  <meta name="description" content="Спортивний табір Tiger Camp для дітей 6–16 років. Бокс, ММА, футбол, TRX та 16+ активностей. Залишилось лише 5 місць на наступну зміну!">
+  <meta property="og:title" content="Tiger Camp — Спортивний табір №1 під Києвом">
+  <meta property="og:description" content="Спорт, нові друзі та незабутні канікули для дітей 6–16 років. Залишилось лише 5 місць на наступну зміну!">
+  <meta property="og:image" content="src_img/hero-bg-lg.jpg">
+  <meta property="og:locale" content="uk_UA">
+  <link rel="icon" type="image/webp" href="src_img/sport-camp-tiger-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0A0A0A; color: #fff; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    :root {
+      --orange: #FF6B00;
+      --orange-light: #FF8533;
+      --orange-dark: #E55D00;
+      --black: #0A0A0A;
+      --dark: #1A1A1A;
+      --gray: #2A2A2A;
+    }
+
+    .container { max-width: 1152px; margin: 0 auto; padding: 0 1rem; }
+    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding: 0 2rem; } }
+
+    .section-title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; }
+    .section-subtitle { margin-top: 1rem; font-size: clamp(1rem, 2vw, 1.25rem); color: #d1d5db; max-width: 42rem; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* CTA */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.875rem 1.25rem; font-size: 0.9375rem; font-weight: 700;
+      line-height: 1.35; text-align: center;
+      background: var(--orange); color: #fff; border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(255,107,0,.25);
+      transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    @media (min-width: 640px) {
+      .btn-primary { padding: 1rem 2rem; font-size: 1.125rem; line-height: 1.4; }
+    }
+    .btn-primary:hover { background: var(--orange-light); transform: scale(1.02); box-shadow: 0 10px 30px rgba(255,107,0,.4); }
+    .btn-primary:active { transform: scale(.98); }
+    .btn-primary.full { width: 100%; }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.875rem 1.25rem; font-size: 0.9375rem; font-weight: 700;
+      line-height: 1.35; text-align: center;
+      background: rgba(255,255,255,.08); color: #fff;
+      border: 2px solid rgba(255,255,255,.35); border-radius: 0.75rem;
+      backdrop-filter: blur(4px);
+      transition: all .2s;
+    }
+    @media (min-width: 640px) {
+      .btn-outline { padding: 1rem 2rem; font-size: 1.125rem; line-height: 1.4; }
+    }
+    .btn-outline:hover {
+      border-color: var(--orange); color: #fff;
+      background: rgba(255,107,0,.15);
+    }
+    .btn-outline:active { transform: scale(.98); }
+
+    /* Urgency */
+    .badge-hero {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--orange); color: #fff; font-weight: 800;
+      padding: .75rem 1.5rem; border-radius: 9999px; font-size: 1rem;
+      box-shadow: 0 8px 24px rgba(255,107,0,.35);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @media (min-width: 640px) { .badge-hero { font-size: 1.125rem; padding: .875rem 1.75rem; } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .85; } }
+
+    .badge-soft {
+      display: inline-flex; align-items: center; gap: .5rem;
+      border: 1px solid rgba(255,107,0,.5); background: rgba(255,107,0,.12);
+      color: var(--orange); font-weight: 700; font-size: .875rem;
+      padding: .625rem 1.25rem; border-radius: 9999px;
+    }
+    @media (min-width: 640px) { .badge-soft { font-size: 1rem; } }
+
+    .badge-spots {
+      background: rgba(255,107,0,.2); color: var(--orange);
+      font-size: .75rem; font-weight: 700; padding: .25rem .75rem; border-radius: 9999px;
+    }
+
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,.8), rgba(10,10,10,.7), #0A0A0A); }
+    .hero-content { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+    .hero-header { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+    .hero-logo { height: 3rem; width: auto; }
+    @media (min-width: 640px) { .hero-logo { height: 3.5rem; } }
+    .hero-header-actions { display: flex; align-items: center; gap: .625rem; }
+    .hero-action-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 2.75rem; height: 2.75rem; border-radius: 50%;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: #fff; transition: all .2s; backdrop-filter: blur(4px);
+    }
+    .hero-action-btn:hover {
+      background: rgba(255,107,0,.2); border-color: var(--orange); color: var(--orange);
+      transform: scale(1.05);
+    }
+    .hero-action-btn svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+    .hero-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 6rem; padding-top: 2rem; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.25rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-top: 1.5rem; }
+    .hero h1 span { color: var(--orange); }
+    .hero-desc { margin-top: 1.5rem; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: #e5e7eb; max-width: 42rem; }
+    .hero-urgency { margin-top: 1rem; font-weight: 600; color: var(--orange); font-size: clamp(.95rem, 2vw, 1.125rem); }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .hero-stat { padding: .75rem 1.25rem; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); border-radius: .75rem; backdrop-filter: blur(4px); }
+    .hero-stat-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #9ca3af; font-weight: 500; }
+    .hero-stat-value { font-size: 1.125rem; font-weight: 700; margin-top: .125rem; }
+    .hero-cta { display: flex; flex-direction: column; gap: .75rem; margin-top: 2.5rem; }
+    @media (min-width: 640px) { .hero-cta { flex-direction: row; align-items: center; gap: 1rem; } }
+    @media (max-width: 639px) {
+      .hero-cta .btn-primary,
+      .hero-cta .btn-outline { width: 100%; }
+    }
+
+    /* Telegram button labels */
+    .tg-label-long { display: none; }
+    @media (min-width: 640px) {
+      .tg-label-short { display: none; }
+      .tg-label-long { display: inline; }
+    }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+    @media (min-width: 640px) { section { padding: 7rem 0; } }
+    .bg-dark { background: var(--dark); }
+
+    /* Cards grid */
+    .grid-3 { display: grid; gap: 1.5rem; margin-top: 3.5rem; }
+    @media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    .card {
+      border: 1px solid rgba(255,255,255,.1); background: var(--dark);
+      border-radius: 1rem; padding: 1.5rem; height: 100%;
+      transition: transform .3s, box-shadow .3s;
+    }
+    @media (min-width: 640px) { .card { padding: 2rem; } }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(255,107,0,.1); }
+    .card-icon { font-size: 2.25rem; }
+    .card h3 { margin-top: 1rem; font-size: 1.25rem; font-weight: 700; }
+    .card p { margin-top: .75rem; color: #9ca3af; line-height: 1.7; }
+
+    /* Activities */
+    .grid-act { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; margin-top: 3.5rem; }
+    @media (min-width: 640px) { .grid-act { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+    @media (min-width: 768px) { .grid-act { grid-template-columns: repeat(4, 1fr); } }
+    .act-item {
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 1.25rem 1rem; border: 1px solid rgba(255,255,255,.1);
+      background: var(--black); border-radius: .75rem; font-weight: 600; font-size: .9rem;
+      transition: transform .3s;
+    }
+    .act-item:hover { transform: translateY(-2px); }
+
+    /* Timeline */
+    .timeline { position: relative; max-width: 32rem; margin: 3.5rem auto 0; }
+    .timeline-line { position: absolute; left: 27px; top: 0; bottom: 0; width: 2px; background: rgba(255,107,0,.3); }
+    @media (min-width: 640px) { .timeline-line { left: 31px; } }
+    .timeline-item { display: flex; align-items: center; gap: 1rem; padding: .75rem 0; position: relative; }
+    @media (min-width: 640px) { .timeline-item { gap: 1.5rem; padding: 1rem 0; } }
+    .timeline-time {
+      flex-shrink: 0; width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; border: 2px solid var(--orange); background: var(--black);
+      font-size: .75rem; font-weight: 700; color: var(--orange); z-index: 1;
+    }
+    @media (min-width: 640px) { .timeline-time { width: 4rem; height: 4rem; font-size: .8rem; } }
+    .timeline-body { flex: 1; padding: 1rem 1.25rem; border: 1px solid rgba(255,255,255,.1); border-radius: .75rem; font-weight: 600; font-size: 1.05rem; }
+    .timeline-body.alt { background: var(--gray); }
+
+    /* Shifts */
+    .grid-2 { display: grid; gap: 2rem; margin-top: 3.5rem; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+    .shift-card {
+      position: relative; border: 1px solid rgba(255,255,255,.1); background: var(--black);
+      border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .shift-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(255,107,0,.1); }
+    .shift-badge { position: absolute; top: 1rem; right: 1rem; }
+    .shift-top { padding: 2rem 2rem 0; }
+    .shift-name { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--orange); }
+    .shift-dates { margin-top: .5rem; font-size: 1.125rem; color: #d1d5db; }
+    .shift-dur { margin-top: .25rem; font-size: .875rem; color: #6b7280; }
+    .shift-bottom { padding: 2rem; margin-top: auto; }
+    .shift-price { display: flex; align-items: baseline; gap: .5rem; margin-bottom: 1.5rem; }
+    .shift-price-num { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; }
+    .shift-price-cur { color: #9ca3af; }
+
+    /* Location */
+    .loc-grid { display: grid; gap: 3rem; align-items: center; margin-top: 0; }
+    @media (min-width: 1024px) { .loc-grid { grid-template-columns: 1fr 1fr; } }
+    .loc-list { margin-top: 2rem; list-style: none; }
+    .loc-list li { display: flex; gap: .75rem; margin-bottom: 1rem; color: #d1d5db; }
+    .loc-list li::before { content: '✓'; color: var(--orange); flex-shrink: 0; margin-top: 2px; }
+    .map-wrap { border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255,255,255,.1); position: relative; }
+    .map-wrap iframe { width: 100%; height: 350px; border: 0; display: block; }
+    .map-link {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .875rem 1rem; background: var(--dark); border-top: 1px solid rgba(255,255,255,.1);
+      font-weight: 600; font-size: .95rem; color: var(--orange); transition: background .2s;
+    }
+    .map-link:hover { background: var(--gray); }
+
+    /* FAQ */
+    .faq-list { max-width: 48rem; margin: 3.5rem auto 0; }
+    .faq-item { border: 1px solid rgba(255,255,255,.1); background: var(--black); border-radius: .75rem; margin-bottom: .75rem; overflow: hidden; }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem; text-align: left; font-weight: 600; font-size: 1rem;
+      background: none; color: #fff; transition: color .2s;
+    }
+    .faq-q:hover { color: var(--orange); }
+    .faq-arrow { color: var(--orange); transition: transform .3s; flex-shrink: 0; margin-left: 1rem; font-size: .75rem; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s, opacity .3s; opacity: 0; }
+    .faq-item.open .faq-a { max-height: 20rem; opacity: 1; }
+    .faq-a p { padding: 0 1.5rem 1.25rem; color: #9ca3af; line-height: 1.7; border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.25rem; }
+
+    /* Final CTA */
+    .final-cta {
+      position: relative; overflow: hidden; padding: 6rem 0;
+      background: linear-gradient(135deg, rgba(255,107,0,.2), var(--black) 50%, var(--black));
+    }
+    .final-cta h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 900; line-height: 1.2; }
+    .final-cta p { margin-top: 1.5rem; font-size: clamp(1rem, 2vw, 1.25rem); color: #d1d5db; line-height: 1.7; }
+    .final-cta .btn-wrap { margin-top: 2.5rem; }
+    .final-note { margin-top: 1.5rem; font-size: .875rem; color: #6b7280; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(255,255,255,.1); padding: 3rem 0; }
+    .footer-top { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    @media (min-width: 640px) { .footer-top { flex-direction: row; justify-content: space-between; } }
+    .footer-logo { height: 2.5rem; }
+    .footer-contacts { text-align: center; }
+    @media (min-width: 640px) { .footer-contacts { text-align: right; } }
+    .footer-phone { font-size: 1.125rem; font-weight: 700; transition: color .2s; }
+    .footer-phone:hover { color: var(--orange); }
+    .footer-email { color: #9ca3af; transition: color .2s; }
+    .footer-email:hover { color: var(--orange); }
+    .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    @media (min-width: 640px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-copy { font-size: .875rem; color: #6b7280; }
+    .footer-insta { display: flex; align-items: center; gap: .5rem; color: #9ca3af; transition: color .2s; }
+    .footer-insta:hover { color: var(--orange); }
+    .footer-insta img { width: 1.5rem; height: 1.5rem; border-radius: 4px; }
+
+    /* Floating & sticky */
+    .float-tg {
+      position: fixed; bottom: 5.5rem; right: 1rem; z-index: 40;
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      background: #0088cc; color: #fff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,136,204,.4); transition: transform .2s;
+    }
+    .float-tg:hover { transform: scale(1.1); }
+    @media (min-width: 640px) { .float-tg { bottom: 2rem; right: 2rem; } }
+    .float-tg svg { width: 1.75rem; height: 1.75rem; fill: currentColor; }
+
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+      display: none; align-items: center; gap: .75rem;
+      padding: .75rem 1rem; background: rgba(10,10,10,.95);
+      border-top: 1px solid rgba(255,107,0,.3); backdrop-filter: blur(8px);
+    }
+    .sticky-bar.visible { display: flex; }
+    .sticky-bar p { flex: 1; font-size: .75rem; font-weight: 600; color: var(--orange); }
+    .sticky-bar .btn-primary { padding: .75rem 1rem; font-size: .875rem; flex-shrink: 0; }
+    @media (min-width: 640px) { .sticky-bar { display: none !important; } }
+
+    /* Phone modal */
+    .phone-modal {
+      position: fixed; inset: 0; z-index: 100;
+      display: none; align-items: center; justify-content: center;
+      padding: 1rem; background: rgba(0,0,0,.7); backdrop-filter: blur(4px);
+    }
+    .phone-modal.open { display: flex; }
+    .phone-modal-box {
+      background: var(--dark); border: 1px solid rgba(255,255,255,.15);
+      border-radius: 1rem; padding: 2rem; text-align: center;
+      max-width: 22rem; width: 100%; position: relative;
+      animation: modalIn .25s ease-out;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+    .phone-modal-close {
+      position: absolute; top: .75rem; right: .75rem;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      background: rgba(255,255,255,.1); color: #fff; font-size: 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .phone-modal-close:hover { background: rgba(255,255,255,.2); }
+    .phone-modal-title { font-size: 1.125rem; font-weight: 600; color: #d1d5db; }
+    .phone-modal-number {
+      display: block; margin: 1.25rem 0 0;
+      font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900;
+      color: var(--orange); letter-spacing: .02em;
+    }
+
+    /* Instagram section */
+    .insta-section { padding: 5rem 0; overflow: hidden; }
+    @media (min-width: 640px) { .insta-section { padding: 7rem 0; } }
+    .insta-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media (min-width: 768px) { .insta-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .insta-photo-wrap {
+      position: relative; border-radius: 1.25rem; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    }
+    .insta-photo-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .insta-photo-badge {
+      position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
+      display: flex; align-items: center; gap: .75rem;
+      padding: .875rem 1rem; border-radius: .75rem;
+      background: rgba(10,10,10,.85); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .insta-photo-badge img { width: 2.25rem; height: 2.25rem; border-radius: 50%; flex-shrink: 0; }
+    .insta-photo-badge-name { font-weight: 700; font-size: .95rem; }
+    .insta-photo-badge-handle { font-size: .8rem; color: #9ca3af; }
+    .insta-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .875rem; font-weight: 600; color: #E1306C; margin-bottom: 1rem;
+    }
+    .insta-label svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+    .insta-content h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.2; }
+    .insta-content p { margin-top: 1rem; color: #d1d5db; font-size: 1.05rem; line-height: 1.7; }
+    .insta-features { margin-top: 1.5rem; list-style: none; }
+    .insta-features li {
+      display: flex; align-items: center; gap: .625rem;
+      margin-bottom: .625rem; color: #e5e7eb; font-size: .95rem;
+    }
+    .insta-features li::before { content: '📸'; font-size: .875rem; }
+    .insta-embed-wrap {
+      border-radius: 1.25rem; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+      background: #fff;
+    }
+    .insta-embed-label {
+      padding: .875rem 1.25rem; background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-weight: 700; font-size: .95rem; color: var(--orange);
+    }
+    .insta-embed-wrap .instagram-media {
+      margin: 0 !important; min-width: 100% !important; max-width: 100% !important;
+      width: 100% !important; border-radius: 0 !important;
+    }
+    .btn-insta {
+      display: inline-flex; align-items: center; justify-content: center; gap: .625rem;
+      margin-top: 2rem; padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700;
+      color: #fff; border-radius: .75rem; border: none;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 8px 24px rgba(225,48,108,.3);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-insta:hover { transform: scale(1.02); box-shadow: 0 12px 30px rgba(225,48,108,.45); }
+    .btn-insta svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+    .btn-insta-video {
+      display: inline-flex; align-items: center; justify-content: center; gap: .625rem;
+      padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700;
+      color: #fff; border-radius: .75rem;
+      background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.2);
+      transition: all .2s;
+    }
+    .btn-insta-video:hover { border-color: var(--orange); background: rgba(255,107,0,.15); }
+    .footer-insta-handle { font-size: .8rem; color: #6b7280; }
+
+    /* Video conditions section */
+    .video-section { padding: 5rem 0; }
+    @media (min-width: 640px) { .video-section { padding: 7rem 0; } }
+    .video-section-inner { max-width: 540px; margin: 2.5rem auto 0; }
+    .video-section .section-subtitle { margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <picture>
+      <source media="(min-width: 1280px)" srcset="src_img/hero-bg-xl.jpg">
+      <source media="(min-width: 768px)" srcset="src_img/hero-bg-lg.jpg">
+      <img class="hero-bg" src="src_img/hero-bg-md.jpg" alt="Діти на тренуванні в Tiger Camp">
+    </picture>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <header class="hero-header">
+        <img class="hero-logo" src="src_img/sport-camp-tiger-logo.webp" alt="Tiger Camp">
+        <div class="hero-header-actions">
+          <a class="hero-action-btn" href="https://www.instagram.com/sport.camp" target="_blank" rel="noopener" aria-label="Instagram @sport.camp">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <button class="hero-action-btn phone-btn" type="button" aria-label="Телефон">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="hero-body">
+        <span class="badge-hero">🔥 Залишилось лише 5 місць на наступну зміну</span>
+        <h1>Спортивний табір №1<br><span>під Києвом</span></h1>
+        <p class="hero-desc">Спорт, нові друзі, активний відпочинок та незабутні канікули для дітей 6–16 років.</p>
+        <p class="hero-urgency">⚡ Кількість місць обмежена — бронюйте зараз</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-label">Вік</div><div class="hero-stat-value">6–16 років</div></div>
+          <div class="hero-stat"><div class="hero-stat-label">Зміни</div><div class="hero-stat-value">Липень – Серпень</div></div>
+          <div class="hero-stat"><div class="hero-stat-label">Вартість</div><div class="hero-stat-value">19–27 тис. грн</div></div>
+        </div>
+        <div class="hero-cta">
+          <a class="btn-primary tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener"><span class="tg-label-short">Зв'язатися в Telegram</span><span class="tg-label-long">Зв'язатися з менеджером у Telegram</span></a>
+          <button class="btn-outline phone-btn" type="button">📞 Зателефонувати</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЧОМУ ОБИРАЮТЬ -->
+  <section>
+    <div class="container text-center">
+      <h2 class="section-title">Чому батьки обирають Tiger Camp</h2>
+      <p class="section-subtitle mx-auto">Ми створили табір, де кожна дитина відчуває себе в безпеці, розвивається та отримує задоволення від кожного дня</p>
+      <div class="grid-3">
+        <div class="card"><div class="card-icon">🛡️</div><h3>Безпека</h3><p>Охоронювана територія, медичний персонал та цілодобовий нагляд тренерів.</p></div>
+        <div class="card"><div class="card-icon">🏆</div><h3>Професійні тренери</h3><p>Досвідчені спортсмени та педагоги з індивідуальним підходом до кожної дитини.</p></div>
+        <div class="card"><div class="card-icon">🍽️</div><h3>4-разове харчування</h3><p>Збалансований раціон, приготований на місці з урахуванням потреб активних дітей.</p></div>
+        <div class="card"><div class="card-icon">🏟️</div><h3>Сучасна спортивна база</h3><p>Sport Village — професійний комплекс з залами, полями та зонами відпочинку.</p></div>
+        <div class="card"><div class="card-icon">⚡</div><h3>Активний відпочинок</h3><p>16+ видів спорту та розваг — дитина не встигне нудьгувати жодного дня.</p></div>
+        <div class="card"><div class="card-icon">🤝</div><h3>Нові друзі</h3><p>Командний дух, спільні перемоги та дружба, що триває довше за канікули.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- АКТИВНОСТІ -->
+  <section class="bg-dark">
+    <div class="container text-center">
+      <h2 class="section-title">Що чекає на вашу дитину</h2>
+      <p class="section-subtitle mx-auto">16+ видів спорту та активностей — від єдиноборств до водних пригод</p>
+      <div class="grid-act">
+        <div class="act-item">Бокс</div><div class="act-item">ММА</div><div class="act-item">Дзюдо</div><div class="act-item">Джиу-джитсу</div>
+        <div class="act-item">Футбол</div><div class="act-item">Волейбол</div><div class="act-item">Баскетбол</div><div class="act-item">TRX</div>
+        <div class="act-item">CrossFit</div><div class="act-item">WorkOut</div><div class="act-item">Сап сплави</div><div class="act-item">Велопрогулянки</div>
+        <div class="act-item">Батут</div><div class="act-item">Змагання</div><div class="act-item">Анімація</div><div class="act-item">Майстер-класи</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- РОЗКЛАД -->
+  <section>
+    <div class="container text-center">
+      <h2 class="section-title">Програма дня</h2>
+      <p class="section-subtitle mx-auto">Насичений розклад: тренування, відпочинок, розваги та збалансоване харчування</p>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-body">Підйом</div></div>
+        <div class="timeline-item"><div class="timeline-time">07:45</div><div class="timeline-body alt">Розминка</div></div>
+        <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-body">Сніданок</div></div>
+        <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-body alt">Тренування</div></div>
+        <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-body">Обід</div></div>
+        <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-body alt">Розваги</div></div>
+        <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-body">Полуденок</div></div>
+        <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-body alt">Тренування</div></div>
+        <div class="timeline-item"><div class="timeline-time">19:30</div><div class="timeline-body">Вечеря</div></div>
+        <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-body alt">Вільний час</div></div>
+        <div class="timeline-item"><div class="timeline-time">22:00</div><div class="timeline-body">Відбій</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЗМІНИ -->
+  <section class="bg-dark">
+    <div class="container text-center">
+      <span class="badge-soft">⚠️ Набір на літні зміни майже завершено</span>
+      <h2 class="section-title" style="margin-top:1rem">Літні зміни 2025</h2>
+      <p class="section-subtitle mx-auto">Оберіть зручні дати та забронюйте місце для вашої дитини. Кількість місць обмежена.</p>
+      <div class="grid-2">
+        <div class="shift-card">
+          <span class="shift-badge badge-spots">Залишилось 3 місця</span>
+          <div class="shift-top">
+            <div class="shift-name">Tiger Camp 1</div>
+            <div class="shift-dates">23 липня – 1 серпня</div>
+            <div class="shift-dur">10 днів</div>
+          </div>
+          <div class="shift-bottom">
+            <div class="shift-price"><span class="shift-price-num">19 000</span><span class="shift-price-cur">грн</span></div>
+            <a class="btn-primary full tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener"><span class="tg-label-short">Зв'язатися в Telegram</span><span class="tg-label-long">Зв'язатися з менеджером у Telegram</span></a>
+          </div>
+        </div>
+        <div class="shift-card">
+          <span class="shift-badge badge-spots">Залишилось 2 місця</span>
+          <div class="shift-top">
+            <div class="shift-name">Tiger Camp 2</div>
+            <div class="shift-dates">9 серпня – 22 серпня</div>
+            <div class="shift-dur">14 днів</div>
+          </div>
+          <div class="shift-bottom">
+            <div class="shift-price"><span class="shift-price-num">27 000</span><span class="shift-price-cur">грн</span></div>
+            <a class="btn-primary full tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener"><span class="tg-label-short">Зв'язатися в Telegram</span><span class="tg-label-long">Зв'язатися з менеджером у Telegram</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВІДЕО: УМОВИ ТАБОРУ -->
+  <section class="video-section">
+    <div class="container text-center">
+      <h2 class="section-title">Умови табору</h2>
+      <p class="section-subtitle">Подивіться коротке відео — умови проживання, харчування, безпека та організація змін</p>
+      <div class="video-section-inner">
+        <div class="insta-embed-wrap">
+          <p class="insta-embed-label">▶ Відео з Instagram</p>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DF79Trwto1E/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0; padding:0; width:100%;">
+            <a href="https://www.instagram.com/p/DF79Trwto1E/" target="_blank" rel="noopener" style="color:#000; font-weight:600; display:block; padding:2rem; text-align:center;">
+              Переглянути відео з умовами табору в Instagram
+            </a>
+          </blockquote>
+        </div>
+        <a class="btn-insta-video" href="https://www.instagram.com/p/DF79Trwto1E/" target="_blank" rel="noopener" style="margin-top:1.25rem; display:inline-flex;">▶ Дивитися в Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЛОКАЦІЯ -->
+  <section>
+    <div class="container">
+      <div class="loc-grid">
+        <div>
+          <h2 class="section-title">Всього 30 км від Києва</h2>
+          <p class="section-subtitle">Табір розташований на території спортивного комплексу Sport Village у Вишній Дубечні — сучасна база з професійними залами, полями та зонами відпочинку на природі.</p>
+          <ul class="loc-list">
+            <li>Професійні спортивні зали та майданчики</li>
+            <li>Охоронювана територія в лісовій зоні</li>
+            <li>Зручний трансфер з Києва включено у вартість</li>
+            <li>Ідеальне місце для активного літнього відпочинку</li>
+          </ul>
+        </div>
+        <div class="map-wrap">
+          <iframe title="Tiger Camp — Sport Village, Вишня Дубечна" src="https://maps.google.com/maps?q=50.7341028,30.6519082&hl=uk&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <a class="map-link" href="https://maps.app.goo.gl/ebok4BpKWBeW7AyX7" target="_blank" rel="noopener">
+            📍 Відкрити в Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-dark">
+    <div class="container text-center">
+      <h2 class="section-title">Часті запитання</h2>
+      <p class="section-subtitle mx-auto">Відповіді на найпоширеніші питання батьків про Tiger Camp</p>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q" type="button">Для якого віку табір?<span class="faq-arrow">▼</span></button>
+          <div class="faq-a"><p>Tiger Camp приймає дітей віком від 6 до 16 років. Групи формуються за віком, щоб кожна дитина отримала відповідне навантаження та комфортне спілкування з однолітками.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чи можуть приїхати діти без спортивної підготовки?<span class="faq-arrow">▼</span></button>
+          <div class="faq-a"><p>Так, абсолютно! Наші тренери адаптують програму під рівень кожної дитини — від новачків до досвідчених спортсменів. Головне — бажання рухатися та весело проводити час.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Яке харчування?<span class="faq-arrow">▼</span></button>
+          <div class="faq-a"><p>Діти отримують 4-разове збалансоване харчування: сніданок, обід, полуденок та вечеря. Меню розроблене з урахуванням потреб активних дітей. Алергії та особливі дієти враховуються за попереднім повідомленням.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Чи безпечно дітям?<span class="faq-arrow">▼</span></button>
+          <div class="faq-a"><p>Безпека — наш пріоритет. Територія охоронюється цілодобово, працює медичний персонал, усі тренери мають досвід роботи з дітьми. Спортивні заняття проходять під постійним наглядом.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="insta-section bg-dark">
+    <div class="container">
+      <div class="insta-grid">
+        <div class="insta-content">
+          <div class="insta-label">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @sport.camp
+          </div>
+          <h2>Життя табору в Instagram</h2>
+          <p>Дивіться, як діти тренуються, відпочивають та знайомляться з новими друзями. Реальні фото та відео з минулих змін — переконайтеся самі, чому батьки довіряють нам своїх дітей.</p>
+          <ul class="insta-features">
+            <li>Фото та відео з тренувань і розваг</li>
+            <li>Щоденне життя табору в Stories</li>
+            <li>Відгуки батьків та результати дітей</li>
+          </ul>
+          <a class="btn-insta" href="https://www.instagram.com/sport.camp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Підписатися в Instagram
+          </a>
+        </div>
+        <a class="insta-photo-wrap" href="https://www.instagram.com/sport.camp" target="_blank" rel="noopener">
+          <img src="src_img/albert.webp" alt="Фото з Tiger Camp в Instagram">
+          <div class="insta-photo-badge">
+            <img src="src_img/sport-camp-tiger-logo.webp" alt="Tiger Camp">
+            <div>
+              <div class="insta-photo-badge-name">Tiger Camp</div>
+              <div class="insta-photo-badge-handle">@sport.camp</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container text-center">
+      <h2>🔥 Залишилось лише 5 місць на наступну зміну</h2>
+      <p>Не відкладайте бронювання. Зв'яжіться з менеджером у Telegram — відповімо та допоможемо з усіма питаннями.</p>
+      <div class="btn-wrap"><a class="btn-primary tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener"><span class="tg-label-short">Зв'язатися в Telegram</span><span class="tg-label-long">Зв'язатися з менеджером у Telegram</span></a></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <img class="footer-logo" src="src_img/sport-camp-tiger-logo.webp" alt="Tiger Camp">
+        <div class="footer-contacts">
+          <a class="footer-phone" href="tel:+380634040303">063-404-03-03</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Tiger Camp. Усі права захищені.</p>
+        <a class="footer-insta" href="https://www.instagram.com/sport.camp" target="_blank" rel="noopener">
+          <img src="src_img/insta.webp" alt="Instagram">
+          <span>Instagram<br><span class="footer-insta-handle">@sport.camp</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Telegram -->
+  <a class="float-tg tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener" aria-label="Telegram">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+  </a>
+
+  <!-- Phone modal -->
+  <div class="phone-modal" id="phoneModal">
+    <div class="phone-modal-box">
+      <button class="phone-modal-close" type="button" id="phoneModalClose" aria-label="Закрити">×</button>
+      <p class="phone-modal-title">Наш телефон</p>
+      <span class="phone-modal-number" id="phoneModalNumber">063-404-03-03</span>
+    </div>
+  </div>
+
+  <!-- Sticky mobile bar -->
+  <div class="sticky-bar" id="stickyBar">
+    <p>🔥 Залишилось 5 місць на наступну зміну</p>
+    <a class="btn-primary tg-link" href="https://t.me/mma_instructor" target="_blank" rel="noopener">Зв'язатися</a>
+  </div>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script>
+    // ===== НАЛАШТУВАННЯ — змініть тут =====
+    var TELEGRAM_USERNAME = 'mma_instructor';
+    var META_PIXEL_ID = '1407767951398542';
+    var PHONE = '063-404-03-03';
+    var TELEGRAM_URL = 'https://t.me/' + TELEGRAM_USERNAME;
+    // ======================================
+
+    // Phone modal
+    var phoneModal = document.getElementById('phoneModal');
+    var phoneModalClose = document.getElementById('phoneModalClose');
+    document.getElementById('phoneModalNumber').textContent = PHONE;
+
+    function trackLead() {
+      if (META_PIXEL_ID && typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    }
+
+    function openPhoneModal() {
+      phoneModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePhoneModal() {
+      phoneModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.phone-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        trackLead();
+        openPhoneModal();
+      });
+    });
+    phoneModalClose.addEventListener('click', closePhoneModal);
+    phoneModal.addEventListener('click', function(e) {
+      if (e.target === phoneModal) closePhoneModal();
+    });
+
+    document.querySelectorAll('.tg-link').forEach(function(el) {
+      el.href = TELEGRAM_URL;
+      el.addEventListener('click', trackLead);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Sticky bar on mobile
+    var stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) stickyBar.classList.add('visible');
+      else stickyBar.classList.remove('visible');
+    }, { passive: true });
+
+    // Meta Pixel
+    if (META_PIXEL_ID) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+  </script>
+</body>
+</html>
