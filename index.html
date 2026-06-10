@@ -144,6 +144,40 @@
     @media (min-width: 640px) { section { padding: 7rem 0; } }
     .bg-dark { background: var(--dark); }
 
+    /* Trust photos */
+    .trust-gallery {
+      display: grid; gap: 1rem; margin-top: 3rem;
+      max-width: 1000px; margin-left: auto; margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .trust-gallery {
+        grid-template-columns: 1.35fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem; height: 28rem;
+      }
+      .trust-photo-main { grid-row: 1 / 3; }
+    }
+    .trust-photo {
+      position: relative; border-radius: 1rem; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 12px 32px rgba(0,0,0,.35);
+    }
+    .trust-photo img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 14rem; }
+    @media (min-width: 768px) {
+      .trust-photo { height: 100%; }
+      .trust-photo img { min-height: 0; height: 100%; }
+    }
+    .trust-photo-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 2.5rem 1rem 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 100%);
+      font-size: .9rem; font-weight: 600; line-height: 1.4;
+    }
+    .trust-note {
+      margin-top: 1.5rem; text-align: center;
+      font-size: .875rem; color: #6b7280;
+    }
+
     /* Cards grid */
     .grid-3 { display: grid; gap: 1.5rem; margin-top: 3.5rem; }
     @media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
@@ -447,6 +481,29 @@
     </div>
   </section>
 
+  <!-- ЩАСЛИВІ ДІТИ -->
+  <section>
+    <div class="container text-center">
+      <h2 class="section-title">Щасливі діти — справжні емоції табору</h2>
+      <p class="section-subtitle mx-auto">Без постановки та фільтрів. Ось як діти проводять час у Tiger Camp — усміхаються, знаходять друзів і отримують незабутні враження</p>
+      <div class="trust-gallery">
+        <div class="trust-photo trust-photo-main">
+          <img src="src_img/children_photo/children1.jpg" alt="Групове фото дітей Tiger Camp на території табору" loading="lazy">
+          <span class="trust-photo-caption">Дружня атмосфера та командний дух кожної зміни</span>
+        </div>
+        <div class="trust-photo">
+          <img src="src_img/children_photo/children2.jpg" alt="Діти в рятувальних жилетах біля води в Tiger Camp" loading="lazy">
+          <span class="trust-photo-caption">Веселі пригоди біля води під наглядом тренерів</span>
+        </div>
+        <div class="trust-photo">
+          <img src="src_img/children_photo/children3.jpg" alt="Діти на велопрогулянці в Tiger Camp" loading="lazy">
+          <span class="trust-photo-caption">Активний відпочинок на природі щодня</span>
+        </div>
+      </div>
+      <p class="trust-note">Усі фото зняті на реальних змінах Tiger Camp</p>
+    </div>
+  </section>
+
   <!-- АКТИВНОСТІ -->
   <section class="bg-dark">
     <div class="container text-center">
@@ -609,7 +666,7 @@
           </a>
         </div>
         <a class="insta-photo-wrap" href="https://www.instagram.com/sport.camp" target="_blank" rel="noopener">
-          <img src="src_img/albert.webp" alt="Фото з Tiger Camp в Instagram">
+          <img src="src_img/children_photo/children1.jpg" alt="Щасливі діти Tiger Camp">
           <div class="insta-photo-badge">
             <img src="src_img/sport-camp-tiger-logo.webp" alt="Tiger Camp">
             <div>
