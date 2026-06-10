@@ -173,10 +173,61 @@
       background: linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 100%);
       font-size: .9rem; font-weight: 600; line-height: 1.4;
     }
-    .trust-note {
-      margin-top: 1.5rem; text-align: center;
-      font-size: .875rem; color: #6b7280;
+
+    /* Staff */
+    .staff-grid {
+      display: grid; gap: 1.25rem; margin-top: 3rem;
+      grid-template-columns: repeat(2, 1fr);
     }
+    @media (min-width: 640px) { .staff-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .staff-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+    .staff-card {
+      text-align: center; padding: 1.25rem 1rem;
+      border: 1px solid rgba(255,255,255,.1); background: var(--black);
+      border-radius: 1rem; transition: transform .3s, box-shadow .3s;
+    }
+    .staff-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(255,107,0,.1); }
+    .staff-photo {
+      width: 6.5rem; height: 6.5rem; border-radius: 50%; object-fit: cover;
+      object-position: center top;
+      margin: 0 auto; display: block;
+      border: 3px solid rgba(255,107,0,.35);
+    }
+    @media (min-width: 640px) { .staff-photo { width: 7.5rem; height: 7.5rem; } }
+    .staff-name { margin-top: 1rem; font-size: .95rem; font-weight: 700; line-height: 1.3; }
+    @media (min-width: 640px) { .staff-name { font-size: 1rem; } }
+    .staff-role { margin-top: .375rem; font-size: .75rem; color: #9ca3af; line-height: 1.45; }
+    @media (min-width: 640px) { .staff-role { font-size: .8rem; } }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid; gap: 1.5rem; margin-top: 3rem; text-align: left;
+    }
+    @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial-card {
+      display: flex; flex-direction: column; height: 100%;
+      padding: 1.5rem; border: 1px solid rgba(255,255,255,.1);
+      background: var(--black); border-radius: 1rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    @media (min-width: 640px) { .testimonial-card { padding: 1.75rem; } }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(255,107,0,.1); }
+    .testimonial-stars { color: var(--orange); font-size: 1rem; letter-spacing: .1em; margin-bottom: 1rem; }
+    .testimonial-text {
+      flex: 1; color: #d1d5db; font-size: .9rem; line-height: 1.7;
+    }
+    @media (min-width: 640px) { .testimonial-text { font-size: .95rem; } }
+    .testimonial-author {
+      display: flex; align-items: center; gap: .875rem;
+      margin-top: 1.25rem; padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .testimonial-avatar {
+      width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover;
+      object-position: center top; flex-shrink: 0;
+      border: 2px solid rgba(255,107,0,.35);
+    }
+    .testimonial-name { font-weight: 700; font-size: .95rem; line-height: 1.3; }
 
     /* Cards grid */
     .grid-3 { display: grid; gap: 1.5rem; margin-top: 3.5rem; }
@@ -500,7 +551,110 @@
           <span class="trust-photo-caption">Активний відпочинок на природі щодня</span>
         </div>
       </div>
-      <p class="trust-note">Усі фото зняті на реальних змінах Tiger Camp</p>
+    </div>
+  </section>
+
+  <!-- КОМАНДА -->
+  <section class="bg-dark">
+    <div class="container text-center">
+      <h2 class="section-title">Наша команда</h2>
+      <p class="section-subtitle mx-auto">Досвідчені тренери, вожаті та організатори — з вашою дитиною працюють професіонали, які люблять свою справу</p>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/alberto_cortez.webp" alt="Альберто Кортес" loading="lazy">
+          <div class="staff-name">Альберто Кортес</div>
+          <div class="staff-role">Організатор табору, інструктор з ММА та самозахисту</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/sasha.jpg" alt="Олександра Гілборг" loading="lazy">
+          <div class="staff-name">Олександра Гілборг</div>
+          <div class="staff-role">Старша вожата табору</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/ali.webp" alt="Алі" loading="lazy">
+          <div class="staff-name">Алі</div>
+          <div class="staff-role">Тренер з ММА, ЗФП</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/yana_omelchuk.webp" alt="Яна Омельчук" loading="lazy">
+          <div class="staff-name">Яна Омельчук</div>
+          <div class="staff-role">Аніматор, вожатий</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/elena_levenets.webp" alt="Олена Левенець" loading="lazy">
+          <div class="staff-name">Олена Левенець</div>
+          <div class="staff-role">Адміністратор табору</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/kseniya_anasko.webp" alt="Ксенія Анаско" loading="lazy">
+          <div class="staff-name">Ксенія Анаско</div>
+          <div class="staff-role">Аніматор, вожатий</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/yurii_kosturya.webp" alt="Юрій Костиря" loading="lazy">
+          <div class="staff-name">Юрій Костиря</div>
+          <div class="staff-role">Тренер з рукопашного бою та ЗФП</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/olesya_kovalenko.webp" alt="Олеся Коваленко" loading="lazy">
+          <div class="staff-name">Олеся Коваленко</div>
+          <div class="staff-role">Організатор табору, орг. питання</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/nadezhda_tsimbal.webp" alt="Надія Цимбал" loading="lazy">
+          <div class="staff-name">Надія Цимбал</div>
+          <div class="staff-role">Організатор табору, медіа</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/zlata_trusova.webp" alt="Злата Трусова" loading="lazy">
+          <div class="staff-name">Злата Трусова</div>
+          <div class="staff-role">Аніматор, вожатий</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/taras_gavrilevich.jpg" alt="Тарас Гаврилевич" loading="lazy">
+          <div class="staff-name">Тарас Гаврилевич</div>
+          <div class="staff-role">Організатор / керівник табору</div>
+        </div>
+        <div class="staff-card">
+          <img class="staff-photo" src="src_img/staff/pavel_litvinyouk.webp" alt="Павло Літвинюк" loading="lazy">
+          <div class="staff-name">Павло Літвинюк</div>
+          <div class="staff-role">Тренер з плавання</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВІДГУКИ -->
+  <section>
+    <div class="container text-center">
+      <h2 class="section-title">Відгуки батьків</h2>
+      <p class="section-subtitle mx-auto">Що кажуть родини, чиї діти вже відпочивали в Tiger Camp</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">Сказати, що табір хороший — не сказати нічого!!!! Табір — супер чудовий!!!! Рекомендую всім дітям і дорослим!! Син приїхав — здоровий, підтягнутий, з новими знайомствами, з величезним бажанням поїхати знову!!! Прекрасні тренери, які вклали душу в кожну дитину!!!! Чекаємо з нетерпінням наступного літа!!!! А може, і взимку пора зустрічатися!!!!</p>
+          <div class="testimonial-author">
+            <img class="testimonial-avatar" src="src_img/testimonials/img-01.webp" alt="Світлана Маковей" loading="lazy">
+            <div class="testimonial-name">Світлана Маковей</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">Супер організатори. Відмінні педагоги. Дуже добре продумана пізнавальна, спортивна програма відпочинку до дрібниць. Дитина приїхала засмагла, відпочила та задоволена, з бажанням поїхати наступного року. РЕКОМЕНДУЮ ВСІМ!!!!!!!!!!</p>
+          <div class="testimonial-author">
+            <img class="testimonial-avatar" src="src_img/testimonials/img-02.webp" alt="Байдюк Валентина" loading="lazy">
+            <div class="testimonial-name">Байдюк Валентина</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">Чудовий табір! Супер інструктори! У дітей дуже різноманітна та цікава програма! Найкраще місце, де відпочивав мій онук. Рекомендація: організувати дитячий відпочинок на зимові канікули. Успіхів усім організаторам!</p>
+          <div class="testimonial-author">
+            <img class="testimonial-avatar" src="src_img/testimonials/img-03.webp" alt="Валентина Кондратюк" loading="lazy">
+            <div class="testimonial-name">Валентина Кондратюк</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
