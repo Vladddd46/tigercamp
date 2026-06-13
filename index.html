@@ -351,25 +351,68 @@
 
     /* Floating & sticky */
     .float-tg {
-      position: fixed; bottom: 5.5rem; right: 1rem; z-index: 40;
+      position: fixed; bottom: 6.5rem; right: 1rem; z-index: 40;
       width: 3.5rem; height: 3.5rem; border-radius: 50%;
       background: #0088cc; color: #fff; display: flex; align-items: center; justify-content: center;
       box-shadow: 0 8px 20px rgba(0,136,204,.4); transition: transform .2s;
     }
     .float-tg:hover { transform: scale(1.1); }
-    @media (min-width: 640px) { .float-tg { bottom: 2rem; right: 2rem; } }
+    @media (min-width: 640px) { .float-tg { bottom: 5.5rem; right: 2rem; } }
     .float-tg svg { width: 1.75rem; height: 1.75rem; fill: currentColor; }
 
+    /* Sticky callback bar */
+    body.has-sticky-bar { padding-bottom: 5.5rem; }
+    @media (min-width: 640px) { body.has-sticky-bar { padding-bottom: 4.5rem; } }
     .sticky-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-      display: none; align-items: center; gap: .75rem;
-      padding: .75rem 1rem; background: rgba(10,10,10,.95);
-      border-top: 1px solid rgba(255,107,0,.3); backdrop-filter: blur(8px);
+      display: block; padding: .75rem 1rem;
+      background: rgba(15,15,15,.97);
+      border-top: 1px solid rgba(255,107,0,.35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 -8px 30px rgba(0,0,0,.45);
     }
-    .sticky-bar.visible { display: flex; }
-    .sticky-bar p { flex: 1; font-size: .75rem; font-weight: 600; color: var(--orange); }
-    .sticky-bar .btn-primary { padding: .75rem 1rem; font-size: .875rem; flex-shrink: 0; }
-    @media (min-width: 640px) { .sticky-bar { display: none !important; } }
+    .sticky-bar-inner { max-width: 1152px; margin: 0 auto; }
+    .sticky-bar-form { display: flex; flex-direction: column; gap: .625rem; }
+    @media (min-width: 640px) {
+      .sticky-bar-form { flex-direction: row; align-items: center; gap: 1rem; }
+    }
+    .sticky-bar-text {
+      flex-shrink: 0; font-size: .8125rem; font-weight: 700;
+      color: var(--orange); line-height: 1.35;
+    }
+    @media (min-width: 640px) { .sticky-bar-text { font-size: .9375rem; max-width: 14rem; } }
+    @media (min-width: 1024px) { .sticky-bar-text { max-width: none; white-space: nowrap; } }
+    .sticky-bar-fields { display: flex; gap: .5rem; flex: 1; min-width: 0; }
+    .sticky-bar-input {
+      flex: 1; min-width: 0; padding: .75rem 1rem; font-size: .9375rem; color: #fff;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+      border-radius: .625rem; outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .sticky-bar-input::placeholder { color: #6b7280; }
+    .sticky-bar-input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,107,0,.2);
+    }
+    .sticky-bar-input.invalid { border-color: #ef4444; }
+    .sticky-bar .btn-primary {
+      flex-shrink: 0; padding: .75rem 1rem; font-size: .8125rem;
+      white-space: nowrap; border: none; cursor: pointer;
+    }
+    @media (min-width: 640px) { .sticky-bar .btn-primary { padding: .75rem 1.25rem; font-size: .875rem; } }
+    .sticky-bar .btn-primary:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+    .sticky-bar-error {
+      display: none; font-size: .75rem; color: #f87171; line-height: 1.3;
+    }
+    .sticky-bar-error.visible { display: block; }
+    @media (min-width: 640px) {
+      .sticky-bar-error { position: absolute; bottom: .25rem; left: 1rem; }
+      .sticky-bar-inner { position: relative; padding-bottom: 0; }
+    }
+    .sticky-bar-success {
+      display: none; text-align: center; font-size: .9375rem; font-weight: 600; color: #e5e7eb;
+    }
+    .sticky-bar-success.visible { display: block; }
 
     /* Phone modal */
     .phone-modal {
@@ -476,7 +519,7 @@
     .video-section .section-subtitle { margin-left: auto; margin-right: auto; }
   </style>
 </head>
-<body>
+<body class="has-sticky-bar">
 
   <!-- HERO -->
   <section class="hero">
@@ -875,10 +918,21 @@
     </div>
   </div>
 
-  <!-- Sticky mobile bar -->
+  <!-- Sticky callback bar -->
   <div class="sticky-bar" id="stickyBar">
-    <p>🔥 Залишилось 5 місць на наступну зміну</p>
-    <a class="btn-primary tg-link" href="https://t.me/camp_tiger" target="_blank" rel="noopener">Зв'язатися</a>
+    <div class="sticky-bar-inner">
+      <form class="sticky-bar-form" id="stickyCallbackForm" novalidate>
+        <p class="sticky-bar-text">📞 Залиште телефон — ми передзвонимо</p>
+        <div class="sticky-bar-fields">
+          <input class="sticky-bar-input" type="tel" id="stickyPhone" name="phone" placeholder="063-404-03-03" autocomplete="tel" required>
+          <button class="btn-primary" type="submit" id="stickySubmit">Передзвонити</button>
+        </div>
+        <span class="sticky-bar-error" id="stickyPhoneError">Введіть коректний номер</span>
+      </form>
+      <div class="sticky-bar-success" id="stickySuccess" role="status" aria-live="polite">
+        ✅ Дякуємо! Ми скоро зв'яжемося з вами.
+      </div>
+    </div>
   </div>
 
   <script async src="https://www.instagram.com/embed.js"></script>
@@ -888,7 +942,80 @@
     var META_PIXEL_ID = '1407767951398542';
     var PHONE = '063-404-03-03';
     var TELEGRAM_URL = 'https://t.me/' + TELEGRAM_USERNAME;
+    var LEADS_API_URL = '/api/leads';
     // ======================================
+
+    function normalizePhone(value) {
+      return String(value || '').replace(/\D/g, '');
+    }
+
+    function isValidUAPhone(value) {
+      var digits = normalizePhone(value);
+      if (digits.length === 12 && digits.indexOf('380') === 0) return true;
+      if (digits.length === 10 && digits.charAt(0) === '0') return true;
+      if (digits.length === 9) return true;
+      return false;
+    }
+
+    // Збереження ліда в leads.json через server.js
+    function saveLead(payload) {
+      return fetch(LEADS_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res) {
+        if (!res.ok) throw new Error('save_failed');
+        return res.json();
+      });
+    }
+
+    // Sticky callback bar
+    var stickyForm = document.getElementById('stickyCallbackForm');
+    var stickyPhone = document.getElementById('stickyPhone');
+    var stickyPhoneError = document.getElementById('stickyPhoneError');
+    var stickySubmit = document.getElementById('stickySubmit');
+    var stickySuccess = document.getElementById('stickySuccess');
+
+    if (stickyForm) {
+      stickyPhone.addEventListener('input', function() {
+        stickyPhone.classList.remove('invalid');
+        stickyPhoneError.classList.remove('visible');
+      });
+
+      stickyForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var phone = stickyPhone.value.trim();
+
+        if (!isValidUAPhone(phone)) {
+          stickyPhone.classList.add('invalid');
+          stickyPhoneError.classList.add('visible');
+          stickyPhone.focus();
+          return;
+        }
+
+        stickyPhone.classList.remove('invalid');
+        stickyPhoneError.classList.remove('visible');
+        stickySubmit.disabled = true;
+        stickySubmit.textContent = '...';
+
+        saveLead({
+          phone: phone,
+          source: 'sticky-bar',
+          page: window.location.href
+        })
+          .then(function() {
+            stickyForm.style.display = 'none';
+            stickySuccess.classList.add('visible');
+            trackLead();
+          })
+          .catch(function() {
+            stickySubmit.disabled = false;
+            stickySubmit.textContent = 'Передзвонити';
+            stickyPhoneError.textContent = 'Помилка відправки. Спробуйте ще раз.';
+            stickyPhoneError.classList.add('visible');
+          });
+      });
+    }
 
     // Phone modal
     var phoneModal = document.getElementById('phoneModal');
@@ -911,10 +1038,7 @@
     }
 
     document.querySelectorAll('.phone-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        trackLead();
-        openPhoneModal();
-      });
+      btn.addEventListener('click', openPhoneModal);
     });
     phoneModalClose.addEventListener('click', closePhoneModal);
     phoneModal.addEventListener('click', function(e) {
@@ -923,7 +1047,6 @@
 
     document.querySelectorAll('.tg-link').forEach(function(el) {
       el.href = TELEGRAM_URL;
-      el.addEventListener('click', trackLead);
     });
 
     // FAQ accordion
@@ -935,13 +1058,6 @@
         if (!wasOpen) item.classList.add('open');
       });
     });
-
-    // Sticky bar on mobile
-    var stickyBar = document.getElementById('stickyBar');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) stickyBar.classList.add('visible');
-      else stickyBar.classList.remove('visible');
-    }, { passive: true });
 
     // Meta Pixel
     if (META_PIXEL_ID) {
