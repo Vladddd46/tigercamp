@@ -921,7 +921,12 @@
   <!-- Sticky callback bar -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-bar-inner">
-      <form class="sticky-bar-form" id="stickyCallbackForm" novalidate>
+      <form class="sticky-bar-form" id="stickyCallbackForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="a7e17d1c-cade-4c29-b96e-d4799fc491bd">
+        <input type="hidden" name="subject" value="Tiger Camp — запит на дзвінок">
+        <input type="hidden" name="from_name" value="Tiger Camp Landing">
+        <input type="hidden" name="source" value="sticky-bar">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <p class="sticky-bar-text">📞 Залиште телефон — ми передзвонимо</p>
         <div class="sticky-bar-fields">
           <input class="sticky-bar-input" type="tel" id="stickyPhone" name="phone" placeholder="063-404-03-03" autocomplete="tel" required>
@@ -942,7 +947,7 @@
     var META_PIXEL_ID = '1407767951398542';
     var PHONE = '063-404-03-03';
     var TELEGRAM_URL = 'https://t.me/' + TELEGRAM_USERNAME;
-    var LEADS_API_URL = '/api/leads';
+    var WEB3FORMS_ACCESS_KEY = 'a7e17d1c-cade-4c29-b96e-d4799fc491bd';
     // ======================================
 
     function normalizePhone(value) {
@@ -957,15 +962,24 @@
       return false;
     }
 
-    // Збереження ліда в leads.json через server.js
-    function saveLead(payload) {
-      return fetch(LEADS_API_URL, {
+    // Відправка через Web3Forms (статичний хостинг, без бекенду)
+    function submitCallbackForm(phone) {
+      var formData = new FormData();
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      formData.append('phone', phone);
+      formData.append('subject', 'Tiger Camp — запит на дзвінок');
+      formData.append('from_name', 'Tiger Camp Landing');
+      formData.append('source', 'sticky-bar');
+      formData.append('page', window.location.href);
+
+      return fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: formData
       }).then(function(res) {
-        if (!res.ok) throw new Error('save_failed');
         return res.json();
+      }).then(function(data) {
+        if (!data.success) throw new Error('submit_failed');
+        return data;
       });
     }
 
@@ -998,11 +1012,7 @@
         stickySubmit.disabled = true;
         stickySubmit.textContent = '...';
 
-        saveLead({
-          phone: phone,
-          source: 'sticky-bar',
-          page: window.location.href
-        })
+        submitCallbackForm(phone)
           .then(function() {
             stickyForm.style.display = 'none';
             stickySuccess.classList.add('visible');
